@@ -143,8 +143,8 @@
       padding-bottom: 24px; border-bottom: 2px solid var(--ink); margin-bottom: 68px;
     }
     .section-num {
-      font-family: 'DM Mono', monospace; font-size: 10px;
-      letter-spacing: 0.25em; color: var(--muted);
+      font-family: 'DM Mono', monospace; font-size: 14px;
+      letter-spacing: 0.2em; color: var(--muted);
     }
     .section-title-cn {
       font-family: 'Noto Serif SC', serif; font-size: 26px;
@@ -210,10 +210,14 @@
       display: inline-block; padding: 7px 16px; margin-bottom: 52px;
     }
     .work-card {
-      display: grid; grid-template-columns: 80px 1fr 1fr;
-      gap: 48px; padding: 56px 0; border-bottom: 1px solid var(--border); align-items: start;
+      display: grid; grid-template-columns: 64px minmax(0,1fr);
+      gap: 40px; padding: 56px 0; border-bottom: 1px solid var(--border); align-items: start;
     }
     .work-card:last-child { border-bottom: none; }
+    .work-inner {
+      display: grid; grid-template-columns: minmax(0,200px) minmax(0,1fr);
+      gap: 40px; align-items: start;
+    }
     .work-index {
       font-family: 'Playfair Display', serif; font-size: 70px;
       font-weight: 700; color: var(--border); line-height: 0.85;
@@ -274,7 +278,7 @@
       letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; text-align: center; padding: 12px;
     }
     /* film */
-    .work-card.film-card { grid-template-columns: 80px 1fr; }
+    .work-card.film-card { grid-template-columns: 64px minmax(0,1fr); }
     .film-inner { display: grid; grid-template-columns: 220px 1fr; gap: 48px; }
     .film-stills {
       grid-column: 1/-1; display: grid;
@@ -332,8 +336,8 @@
     .exp-card:nth-child(3) .exp-accent { background: var(--teal); }
     .exp-card:nth-child(4) .exp-accent { background: var(--red); }
     .exp-period {
-      font-family: 'DM Mono', monospace; font-size: 9px;
-      letter-spacing: 0.15em; color: var(--muted); margin-bottom: 14px;
+      font-family: 'DM Mono', monospace; font-size: 12px;
+      letter-spacing: 0.12em; color: var(--ink2); margin-bottom: 14px; font-weight: 500;
     }
     .exp-company {
       font-family: 'Noto Serif SC', serif; font-size: 18px;
@@ -427,8 +431,9 @@
       .section-wrap { padding: 72px 20px; }
       .about-grid { grid-template-columns: 1fr; gap: 36px; }
       .about-stats { grid-template-columns: repeat(2,1fr); }
-      .work-card { grid-template-columns: 48px 1fr; }
-      .work-card.film-card { grid-template-columns: 48px 1fr; }
+      .work-card { grid-template-columns: 48px minmax(0,1fr); }
+      .work-inner { grid-template-columns: minmax(0,1fr); }
+      .work-card.film-card { grid-template-columns: 48px minmax(0,1fr); }
       .film-inner { grid-template-columns: 1fr; }
       .film-stills { grid-template-columns: 1fr 1fr; }
       .exp-grid { grid-template-columns: 1fr; }
@@ -517,24 +522,7 @@
         <p class="about-body">我是<strong>颜诗雨</strong>，北京师范大学戏剧影视文学专业26届毕业生，所学专业软科2025年全国排名第一。</p>
         <p class="about-body">我的过往经历横跨<strong>商业纪录片制作、剧情短片统筹、社交媒体运营与影视内容创作</strong>。无论是内容策划、现场执行、KOL建联，还是数据复盘与传播方案，我都在真实的商业项目中完整走过全链路。</p>
         <p class="about-body">2024年起先后在<strong>快手科技、哇唧唧哇、《人物》杂志、1905电影网</strong>实习，覆盖纪录片、综艺、杂志新媒体与电影资讯全赛道。</p>
-        <div class="about-stats">
-          <div class="stat-item">
-            <div class="stat-num">1000<span class="stat-unit">万+</span></div>
-            <div class="stat-label">微博累计阅读量</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num">100<span class="stat-unit">万+</span></div>
-            <div class="stat-label">单条最高阅读量</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num">2</div>
-            <div class="stat-label">北影节入围项目</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num">800<span class="stat-unit">万+</span></div>
-            <div class="stat-label">校媒短视频浏览量</div>
-          </div>
-        </div>
+
       </div>
     </div>
   </div>
@@ -554,32 +542,34 @@
     <!-- 01 快手 -->
     <div class="work-card fade-up">
       <div class="work-index">01</div>
-      <div>
-        <div class="work-title-cn">快手纪录片全案</div>
-        <div class="work-subtitle">Documentary Full Campaign</div>
-        <div class="work-org">快手科技</div>
-        <div class="work-year">2024–2025</div>
-      </div>
-      <div>
-        <p class="work-desc">两部纪录片，从选题策划到传播复盘，全案参与执行。</p>
-        <div class="highlight-box">
-          <strong>《像岩石一样生活》× 可灵AI 联合出品</strong><br>
-          首部融合AI影像生成技术的快手纪录片项目，探索AI工具在纪实影像创作中的可能性边界。
+      <div class="work-inner">
+        <div>
+          <div class="work-title-cn">快手纪录片全案</div>
+          <div class="work-subtitle">Documentary Full Campaign</div>
+          <div class="work-org">快手科技</div>
+          <div class="work-year">2024–2025</div>
         </div>
-        <div class="highlight-box">
-          <strong>《西北刀客》× 京东3C数码 品牌植入</strong><br>
-          面向京东3C数码用户圈层的内容营销案例，将品牌植入自然融入纪实叙事。
-        </div>
-        <div class="chips-label">工作内容</div>
-        <div class="chips">
-          <span class="chip">选题策划</span><span class="chip">实地拍摄</span>
-          <span class="chip">传播方案</span><span class="chip">文案撰写</span>
-          <span class="chip">KOL筛选建联</span><span class="chip">公众号特稿</span>
-          <span class="chip">数据复盘</span><span class="chip">AI协作</span>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:28px;background:var(--border);">
-          <div class="img-ph" style="height:170px;"><span>纪录片现场 / 海报</span></div>
-          <div class="img-ph" style="height:170px;"><span>西北刀客 宣传图</span></div>
+        <div>
+          <p class="work-desc">两部纪录片，从选题策划到传播复盘，全案参与执行。</p>
+          <div class="highlight-box">
+            <strong>《像岩石一样生活》× 可灵AI 联合出品</strong><br>
+            首部融合AI影像生成技术的快手纪录片项目，探索AI工具在纪实影像创作中的可能性边界。
+          </div>
+          <div class="highlight-box">
+            <strong>《西北刀客》× 京东3C数码 品牌植入</strong><br>
+            面向京东3C数码用户圈层的内容营销案例，将品牌植入自然融入纪实叙事。
+          </div>
+          <div class="chips-label">工作内容</div>
+          <div class="chips">
+            <span class="chip">选题策划</span><span class="chip">实地拍摄</span>
+            <span class="chip">传播方案</span><span class="chip">文案撰写</span>
+            <span class="chip">KOL筛选建联</span><span class="chip">公众号特稿</span>
+            <span class="chip">数据复盘</span><span class="chip">AI协作</span>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:28px;background:var(--border);">
+            <div class="img-ph" style="height:170px;"><span>纪录片现场 / 海报</span></div>
+            <div class="img-ph" style="height:170px;"><span>西北刀客 宣传图</span></div>
+          </div>
         </div>
       </div>
     </div>
@@ -587,21 +577,23 @@
     <!-- 02 人物 -->
     <div class="work-card fade-up">
       <div class="work-index">02</div>
-      <div>
-        <div class="work-title-cn">人物官博运营</div>
-        <div class="work-subtitle">#Yellow Portrait#</div>
-        <div class="work-org">《人物》杂志</div>
-        <div class="work-year">2024–2025</div>
-      </div>
-      <div>
-        <p class="work-desc">《人物》杂志旗下微博栏目 <strong>#Yellow Portrait#</strong>，以音乐、电影、书籍文化为核心选题，深度解读时代坐标与精神图谱。</p>
-        <p class="work-desc">负责管理5个平台官方账号，独立撰写原创博文，运用精准内容营销策略驱动粉丝互动。</p>
-        <div class="stats-row">
-          <div><div class="inline-stat-num">1,000万+</div><div class="inline-stat-label">博文累计阅读量</div></div>
-          <div><div class="inline-stat-num">100万+</div><div class="inline-stat-label">单条最高阅读量</div></div>
-          <div><div class="inline-stat-num">30+</div><div class="inline-stat-label">运营复盘报告</div></div>
+      <div class="work-inner">
+        <div>
+          <div class="work-title-cn">人物官博运营</div>
+          <div class="work-subtitle">#Yellow Portrait#</div>
+          <div class="work-org">《人物》杂志</div>
+          <div class="work-year">2024–2025</div>
         </div>
-        <div class="img-ph" style="height:190px;margin-top:28px;"><span>运营截图 / 博文数据</span></div>
+        <div>
+          <p class="work-desc">《人物》杂志旗下微博栏目 <strong>#Yellow Portrait#</strong>，以音乐、电影、书籍文化为核心选题，深度解读时代坐标与精神图谱。</p>
+          <p class="work-desc">负责管理5个平台官方账号，独立撰写原创博文，运用精准内容营销策略驱动粉丝互动。</p>
+          <div class="stats-row">
+            <div><div class="inline-stat-num">1,000万+</div><div class="inline-stat-label">博文累计阅读量</div></div>
+            <div><div class="inline-stat-num">100万+</div><div class="inline-stat-label">单条最高阅读量</div></div>
+            <div><div class="inline-stat-num">30+</div><div class="inline-stat-label">运营复盘报告</div></div>
+          </div>
+          <div class="img-ph" style="height:190px;margin-top:28px;"><span>运营截图 / 博文数据</span></div>
+        </div>
       </div>
     </div>
 
@@ -648,19 +640,21 @@
     <!-- 04 影评 -->
     <div class="work-card fade-up">
       <div class="work-index">04</div>
-      <div>
-        <div class="work-title-cn">《宇宙探索编辑部》影评</div>
-        <div class="work-subtitle">Film Criticism</div>
-        <div class="work-org">北京国际电影节</div>
-        <div class="work-year">2023</div>
-        <div class="award-badge"><span class="badge-dot"></span>第31届大学生电影节 入围</div>
-        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;color:var(--muted);margin-top:6px;">影评推选单元</div>
-      </div>
-      <div>
-        <div class="quote-pull">"但是还有诗人——<br>当代科幻电影的诗意化"</div>
-        <p class="work-desc">从人物分析、意象系统与哲学内核三个维度，解读《宇宙探索编辑部》对传统科幻逻辑的颠覆。它不讲科技，不讲真理，只讲在宏大叙事下如何做一个人。</p>
-        <p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:var(--orange);">核心论点：科学无法抵达的地方，诗人可以到。</p>
-        <div class="img-ph" style="height:180px;margin-top:24px;"><span>影评截图 / 入围证书</span></div>
+      <div class="work-inner">
+        <div>
+          <div class="work-title-cn">《宇宙探索编辑部》影评</div>
+          <div class="work-subtitle">Film Criticism</div>
+          <div class="work-org">北京国际电影节</div>
+          <div class="work-year">2023</div>
+          <div class="award-badge"><span class="badge-dot"></span>第31届大学生电影节 入围</div>
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.1em;color:var(--muted);margin-top:6px;">影评推选单元</div>
+        </div>
+        <div>
+          <div class="quote-pull">"但是还有诗人——<br>当代科幻电影的诗意化"</div>
+          <p class="work-desc">从人物分析、意象系统与哲学内核三个维度，解读《宇宙探索编辑部》对传统科幻逻辑的颠覆。它不讲科技，不讲真理，只讲在宏大叙事下如何做一个人。</p>
+          <p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;color:var(--orange);">核心论点：科学无法抵达的地方，诗人可以到。</p>
+          <div class="img-ph" style="height:180px;margin-top:24px;"><span>影评截图 / 入围证书</span></div>
+        </div>
       </div>
     </div>
 
@@ -717,8 +711,8 @@
       </div>
       <div class="exp-card">
         <div class="exp-accent"></div>
-        <div class="exp-period">2025.04 — 2025.07 &nbsp;·&nbsp; 长沙</div>
-        <div class="exp-company">长沙哇唧唧哇有限公司</div>
+        <div class="exp-period">2025.04 — 2025.07 &nbsp;·&nbsp; 北京</div>
+        <div class="exp-company">哇唧唧哇有限公司</div>
         <div class="exp-role">制片实习生 · Production Intern</div>
         <ul class="exp-bullets">
           <li>参与《毛雪汪》等多档综艺节目全流程筹备，协助主场景创意策划</li>
@@ -767,7 +761,7 @@
       </tr>
       <tr>
         <td class="skill-cat-cell"><span class="skill-icon">🤖</span>AI 工具</td>
-        <td><div class="chips"><span class="chip">Claude</span><span class="chip">ChatGPT</span><span class="chip">Midjourney</span><span class="chip">可灵AI</span></div></td>
+        <td><div class="chips"><span class="chip">Claude</span><span class="chip">ChatGPT</span><span class="chip">Midjourney</span></div></td>
       </tr>
       <tr>
         <td class="skill-cat-cell"><span class="skill-icon">📊</span>数据分析</td>
@@ -800,7 +794,7 @@
     <div class="contact-layout fade-up">
       <div>
         <div class="contact-headline">Let's make<br><em>something</em><br>great together.</div>
-        <p class="contact-sub">欢迎内容创作、影视制片、媒介运营方向的合作与实习机会。<br>期待与你的连接。</p>
+        <p class="contact-sub"></p>
       </div>
       <div class="contact-items">
         <div class="contact-row">
